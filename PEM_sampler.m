@@ -79,6 +79,26 @@ for stage = 2 : S
     w = 1/Np .* ones(Np,1);
 
     % MCMC Step ---------------
+    % rand walk
+    b = 10^(-2).*ones(1,dim);
+
+    for i = 1 : Np
+        e = -b + 2.*b.*rand(1, dim);
+        para_median = para_old(i, :) + e;
+        alp_old = betas_new .* target(para_new(i, :), obs);
+        alp_media = betas_new .* target(para_median, obs);      
+ 
+        % M-H accept
+        ratio = min([1, exp(alp_media - alp_old)]);
+        u = rand;
+        if u < ratio
+            para_new(i, :) = para_median;  
+            accept(stage) = accept(stage) + 1;
+        else
+            para_new(i, :) = para_new(i, :); 
+        end        
+    end    
+
     % Crossover Operater
     [para_median, index] = crossover(para_new, pc);
 

@@ -6,8 +6,8 @@ clc
 load dataLorenz % target/observed data
 
 obs = dataLorenz;
-Np = 400;                      % number of particles
-S = 1000;                       % number of iterations
+Np = 100;                      % number of particles
+S = 500;                       % number of iterations
 
 % Lorenz model parameter calibration 
 % Parameter boundary
@@ -25,7 +25,7 @@ tic
 clear paramete_trajectory
 for i = 1 : S
     parameter = paramter_iteration(:,:,end);  
-    paramete_trajectory(i,:) = paramter_iteration(10,:,i);
+    paramete_trajectory(i,:) = paramter_iteration(12,:,i);
 end
 
 % parameter used to generate observation
