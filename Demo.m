@@ -7,7 +7,7 @@ load dataLorenz % target/observed data
 
 obs = dataLorenz;
 Np = 100;                      % number of particles
-S = 500;                       % number of iterations
+S = 700;                       % number of iterations
 
 % Lorenz model parameter calibration 
 % Parameter boundary
