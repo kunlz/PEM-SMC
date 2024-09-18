@@ -1,0 +1,18 @@
+ &clmexp
+ site           = 'Valdai'
+ flaidat        = ''
+ fmetdat        = '/group_homes/lzu_public/home/u120220909911/Summer/Last/LE/RU-FY2/data/VAL.DAT.CTRL'
+ fhistTimeConst = '/group_homes/lzu_public/home/u120220909911/Summer/Last/LE/RU-FY2/output/rstTimeConst'
+ fhistTimeVar   = '/group_homes/lzu_public/home/u120220909911/Summer/Last/LE/RU-FY2/output/rstTimeVar'
+ foutdat        = '/group_homes/lzu_public/home/u120220909911/Summer/Last/LE/RU-FY2/output/VALDAI'
+ lhistTimeConst =          150
+ lhistTimeVar   =          160
+ lulai          =          120
+ lumet          =          140
+ luout          =          170
+ lon_points     =            1
+ lat_points     =            1
+ numpatch       =            2
+ deltim         =    1800.00000000000     
+ mstep          =         4417
+ /

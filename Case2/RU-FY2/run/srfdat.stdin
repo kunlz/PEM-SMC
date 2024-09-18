@@ -1,0 +1,15 @@
+&mksrfexp
+fgridname  = ' '
+fdemname   = '/group_homes/lzu_public/home/u120220909911/CoLM/rawdata/dem-usgs.30s'
+fmaskname  = '/group_homes/lzu_public/home/u120220909911/CoLM/rawdata/lwmask-usgs.30s'
+flandname  = '/group_homes/lzu_public/home/u120220909911/CoLM/rawdata/veg-usgs.30s'
+fsolaname  = '/group_homes/lzu_public/home/u120220909911/CoLM/rawdata/soilcat.30s'
+fsolbname  = '/group_homes/lzu_public/home/u120220909911/CoLM/rawdata/soilcatb.30s'
+fsurdat    = '/group_homes/lzu_public/home/u120220909911/Summer/Last/LE/RU-FY2/data/srfdata.valdai'
+lon_points = 1
+lat_points = 1
+edgen      = 56.45
+edgee      = 32.91
+edges      = 56.43
+edgew      = 32.89
+/

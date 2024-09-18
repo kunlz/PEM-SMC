@@ -1,0 +1,201 @@
+ifort -EP -I. -I../.. -I../include precision.F90 >precision.i
+sed '/^ *$/d' precision.i >precision.f90; rm precision.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include precision.f90 
+ifort -EP -I. -I../.. -I../include mksrfdata.F90 >mksrfdata.i
+sed '/^ *$/d' mksrfdata.i >mksrfdata.f90; rm mksrfdata.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include mksrfdata.f90 
+ifort -EP -I. -I../.. -I../include rdgrid.F90 >rdgrid.i
+sed '/^ *$/d' rdgrid.i >rdgrid.f90; rm rdgrid.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include rdgrid.f90 
+ifort -EP -I. -I../.. -I../include crgrid.F90 >crgrid.i
+sed '/^ *$/d' crgrid.i >crgrid.f90; rm crgrid.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include crgrid.f90 
+ifort -EP -I. -I../.. -I../include rdlanddata.F90 >rdlanddata.i
+sed '/^ *$/d' rdlanddata.i >rdlanddata.f90; rm rdlanddata.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include rdlanddata.f90 
+ifort -EP -I. -I../.. -I../include celledge.F90 >celledge.i
+sed '/^ *$/d' celledge.i >celledge.f90; rm celledge.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include celledge.f90 
+ifort -EP -I. -I../.. -I../include cellarea.F90 >cellarea.i
+sed '/^ *$/d' cellarea.i >cellarea.f90; rm cellarea.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include cellarea.f90 
+ifort -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include precision.o mksrfdata.o rdgrid.o crgrid.o rdlanddata.o celledge.o cellarea.o -o srf.x
+ifort -EP -I. -I../.. -I../include precision.F90 >precision.i
+sed '/^ *$/d' precision.i >precision.f90; rm precision.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include precision.f90 
+ifort -EP -I. -I../.. -I../include phycon_module.F90 >phycon_module.i
+sed '/^ *$/d' phycon_module.i >phycon_module.f90; rm phycon_module.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include phycon_module.f90 
+ifort -EP -I. -I../.. -I../include initialize.F90 >initialize.i
+sed '/^ *$/d' initialize.i >initialize.f90; rm initialize.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include initialize.f90 
+ifort -EP -I. -I../.. -I../include CLMINI.F90 >CLMINI.i
+sed '/^ *$/d' CLMINI.i >CLMINI.f90; rm CLMINI.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include CLMINI.f90 
+ifort -EP -I. -I../.. -I../include iniTimeConst.F90 >iniTimeConst.i
+sed '/^ *$/d' iniTimeConst.i >iniTimeConst.f90; rm iniTimeConst.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include iniTimeConst.f90 
+ifort -EP -I. -I../.. -I../include iniTimeVar.F90 >iniTimeVar.i
+sed '/^ *$/d' iniTimeVar.i >iniTimeVar.f90; rm iniTimeVar.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include iniTimeVar.f90 
+ifort -EP -I. -I../.. -I../include orb_coszen.F90 >orb_coszen.i
+sed '/^ *$/d' orb_coszen.i >orb_coszen.f90; rm orb_coszen.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include orb_coszen.f90 
+ifort -EP -I. -I../.. -I../include lai_empirical.F90 >lai_empirical.i
+sed '/^ *$/d' lai_empirical.i >lai_empirical.f90; rm lai_empirical.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include lai_empirical.f90 
+ifort -EP -I. -I../.. -I../include rstFileMod.F90 >rstFileMod.i
+sed '/^ *$/d' rstFileMod.i >rstFileMod.f90; rm rstFileMod.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include rstFileMod.f90 
+ifort -EP -I. -I../.. -I../include albland.F90 >albland.i
+sed '/^ *$/d' albland.i >albland.f90; rm albland.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include albland.f90 
+ifort -EP -I. -I../.. -I../include albocean.F90 >albocean.i
+sed '/^ *$/d' albocean.i >albocean.f90; rm albocean.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include albocean.f90 
+ifort -EP -I. -I../.. -I../include twostream.F90 >twostream.i
+sed '/^ *$/d' twostream.i >twostream.f90; rm twostream.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include twostream.f90 
+ifort -EP -I. -I../.. -I../include snowfraction.F90 >snowfraction.i
+sed '/^ *$/d' snowfraction.i >snowfraction.f90; rm snowfraction.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include snowfraction.f90 
+ifort -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include precision.o phycon_module.o initialize.o CLMINI.o iniTimeConst.o iniTimeVar.o orb_coszen.o lai_empirical.o rstFileMod.o albland.o albocean.o twostream.o snowfraction.o -o initial.x
+ifort -EP -I. -I../.. -I../include precision.F90 >precision.i
+sed '/^ *$/d' precision.i >precision.f90; rm precision.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include precision.f90 
+ifort -EP -I. -I../.. -I../include phycon_module.F90 >phycon_module.i
+sed '/^ *$/d' phycon_module.i >phycon_module.f90; rm phycon_module.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include phycon_module.f90 
+ifort -EP -I. -I../.. -I../include CLM.F90 >CLM.i
+sed '/^ *$/d' CLM.i >CLM.f90; rm CLM.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include CLM.f90 
+ifort -EP -I. -I../.. -I../include CLMDRIVER.F90 >CLMDRIVER.i
+sed '/^ *$/d' CLMDRIVER.i >CLMDRIVER.f90; rm CLMDRIVER.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include CLMDRIVER.f90 
+ifort -EP -I. -I../.. -I../include CLMMAIN.F90 >CLMMAIN.i
+sed '/^ *$/d' CLMMAIN.i >CLMMAIN.f90; rm CLMMAIN.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include CLMMAIN.f90 
+ifort -EP -I. -I../.. -I../include GETMET.F90 >GETMET.i
+sed '/^ *$/d' GETMET.i >GETMET.f90; rm GETMET.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include GETMET.f90 
+ifort -EP -I. -I../.. -I../include LAKE.F90 >LAKE.i
+sed '/^ *$/d' LAKE.i >LAKE.f90; rm LAKE.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include LAKE.f90 
+ifort -EP -I. -I../.. -I../include SOCEAN.F90 >SOCEAN.i
+sed '/^ *$/d' SOCEAN.i >SOCEAN.f90; rm SOCEAN.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include SOCEAN.f90 
+ifort -EP -I. -I../.. -I../include THERMAL.F90 >THERMAL.i
+sed '/^ *$/d' THERMAL.i >THERMAL.f90; rm THERMAL.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include THERMAL.f90 
+ifort -EP -I. -I../.. -I../include WATER.F90 >WATER.i
+sed '/^ *$/d' WATER.i >WATER.f90; rm WATER.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include WATER.f90 
+ifort -EP -I. -I../.. -I../include albland.F90 >albland.i
+sed '/^ *$/d' albland.i >albland.f90; rm albland.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include albland.f90 
+ifort -EP -I. -I../.. -I../include albocean.F90 >albocean.i
+sed '/^ *$/d' albocean.i >albocean.f90; rm albocean.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include albocean.f90 
+ifort -EP -I. -I../.. -I../include combo.F90 >combo.i
+sed '/^ *$/d' combo.i >combo.f90; rm combo.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include combo.f90 
+ifort -EP -I. -I../.. -I../include dewfraction.F90 >dewfraction.i
+sed '/^ *$/d' dewfraction.i >dewfraction.f90; rm dewfraction.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include dewfraction.f90 
+ifort -EP -I. -I../.. -I../include eroot.F90 >eroot.i
+sed '/^ *$/d' eroot.i >eroot.f90; rm eroot.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include eroot.f90 
+ifort -EP -I. -I../.. -I../include flxwrite.F90 >flxwrite.i
+sed '/^ *$/d' flxwrite.i >flxwrite.f90; rm flxwrite.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include flxwrite.f90 
+ifort -EP -I. -I../.. -I../include groundfluxes.F90 >groundfluxes.i
+sed '/^ *$/d' groundfluxes.i >groundfluxes.f90; rm groundfluxes.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include groundfluxes.f90 
+ifort -EP -I. -I../.. -I../include groundtem.F90 >groundtem.i
+sed '/^ *$/d' groundtem.i >groundtem.f90; rm groundtem.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include groundtem.f90 
+ifort -EP -I. -I../.. -I../include hCapacity.F90 >hCapacity.i
+sed '/^ *$/d' hCapacity.i >hCapacity.f90; rm hCapacity.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include hCapacity.f90 
+ifort -EP -I. -I../.. -I../include hConductivity.F90 >hConductivity.i
+sed '/^ *$/d' hConductivity.i >hConductivity.f90; rm hConductivity.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include hConductivity.f90 
+ifort -EP -I. -I../.. -I../include lai_empirical.F90 >lai_empirical.i
+sed '/^ *$/d' lai_empirical.i >lai_empirical.f90; rm lai_empirical.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include lai_empirical.f90 
+ifort -EP -I. -I../.. -I../include leafinterception.F90 >leafinterception.i
+sed '/^ *$/d' leafinterception.i >leafinterception.f90; rm leafinterception.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include leafinterception.f90 
+ifort -EP -I. -I../.. -I../include leaftemone.F90 >leaftemone.i
+sed '/^ *$/d' leaftemone.i >leaftemone.f90; rm leaftemone.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include leaftemone.f90 
+ifort -EP -I. -I../.. -I../include leaftemtwo.F90 >leaftemtwo.i
+sed '/^ *$/d' leaftemtwo.i >leaftemtwo.f90; rm leaftemtwo.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include leaftemtwo.f90 
+ifort -EP -I. -I../.. -I../include lpwrite.F90 >lpwrite.i
+sed '/^ *$/d' lpwrite.i >lpwrite.f90; rm lpwrite.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include lpwrite.f90 
+ifort -EP -I. -I../.. -I../include meltf.F90 >meltf.i
+sed '/^ *$/d' meltf.i >meltf.f90; rm meltf.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include meltf.f90 
+ifort -EP -I. -I../.. -I../include moninobuk.F90 >moninobuk.i
+sed '/^ *$/d' moninobuk.i >moninobuk.f90; rm moninobuk.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include moninobuk.f90 
+ifort -EP -I. -I../.. -I../include netsolar.F90 >netsolar.i
+sed '/^ *$/d' netsolar.i >netsolar.f90; rm netsolar.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include netsolar.f90 
+ifort -EP -I. -I../.. -I../include newsnow.F90 >newsnow.i
+sed '/^ *$/d' newsnow.i >newsnow.f90; rm newsnow.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include newsnow.f90 
+ifort -EP -I. -I../.. -I../include orb_coszen.F90 >orb_coszen.i
+sed '/^ *$/d' orb_coszen.i >orb_coszen.f90; rm orb_coszen.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include orb_coszen.f90 
+ifort -EP -I. -I../.. -I../include qsadv.F90 >qsadv.i
+sed '/^ *$/d' qsadv.i >qsadv.f90; rm qsadv.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include qsadv.f90 
+ifort -EP -I. -I../.. -I../include rstFileMod.F90 >rstFileMod.i
+sed '/^ *$/d' rstFileMod.i >rstFileMod.f90; rm rstFileMod.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include rstFileMod.f90 
+ifort -EP -I. -I../.. -I../include snowage.F90 >snowage.i
+sed '/^ *$/d' snowage.i >snowage.f90; rm snowage.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include snowage.f90 
+ifort -EP -I. -I../.. -I../include snowcompaction.F90 >snowcompaction.i
+sed '/^ *$/d' snowcompaction.i >snowcompaction.f90; rm snowcompaction.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include snowcompaction.f90 
+ifort -EP -I. -I../.. -I../include snowfraction.F90 >snowfraction.i
+sed '/^ *$/d' snowfraction.i >snowfraction.f90; rm snowfraction.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include snowfraction.f90 
+ifort -EP -I. -I../.. -I../include snowlayerscombine.F90 >snowlayerscombine.i
+sed '/^ *$/d' snowlayerscombine.i >snowlayerscombine.f90; rm snowlayerscombine.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include snowlayerscombine.f90 
+ifort -EP -I. -I../.. -I../include snowlayersdivide.F90 >snowlayersdivide.i
+sed '/^ *$/d' snowlayersdivide.i >snowlayersdivide.f90; rm snowlayersdivide.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include snowlayersdivide.f90 
+ifort -EP -I. -I../.. -I../include snowwater.F90 >snowwater.i
+sed '/^ *$/d' snowwater.i >snowwater.f90; rm snowwater.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include snowwater.f90 
+ifort -EP -I. -I../.. -I../include soilwater.F90 >soilwater.i
+sed '/^ *$/d' soilwater.i >soilwater.f90; rm soilwater.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include soilwater.f90 
+ifort -EP -I. -I../.. -I../include stomata.F90 >stomata.i
+sed '/^ *$/d' stomata.i >stomata.f90; rm stomata.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include stomata.f90 
+ifort -EP -I. -I../.. -I../include subsurfacerunoff.F90 >subsurfacerunoff.i
+sed '/^ *$/d' subsurfacerunoff.i >subsurfacerunoff.f90; rm subsurfacerunoff.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include subsurfacerunoff.f90 
+ifort -EP -I. -I../.. -I../include surfacerunoff.F90 >surfacerunoff.i
+sed '/^ *$/d' surfacerunoff.i >surfacerunoff.f90; rm surfacerunoff.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include surfacerunoff.f90 
+ifort -EP -I. -I../.. -I../include ticktime.F90 >ticktime.i
+sed '/^ *$/d' ticktime.i >ticktime.f90; rm ticktime.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include ticktime.f90 
+ifort -EP -I. -I../.. -I../include tridia.F90 >tridia.i
+sed '/^ *$/d' tridia.i >tridia.f90; rm tridia.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include tridia.f90 
+ifort -EP -I. -I../.. -I../include twostream.F90 >twostream.i
+sed '/^ *$/d' twostream.i >twostream.f90; rm twostream.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include twostream.f90 
+ifort -EP -I. -I../.. -I../include vec2xy.F90 >vec2xy.i
+sed '/^ *$/d' vec2xy.i >vec2xy.f90; rm vec2xy.i
+ifort -c -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include vec2xy.f90 
+ifort -i4 -r8 -free -CB -extend_source -I. -I../.. -I../include precision.o phycon_module.o CLM.o CLMDRIVER.o CLMMAIN.o GETMET.o LAKE.o SOCEAN.o THERMAL.o WATER.o albland.o albocean.o combo.o dewfraction.o eroot.o flxwrite.o groundfluxes.o groundtem.o hCapacity.o hConductivity.o lai_empirical.o leafinterception.o leaftemone.o leaftemtwo.o lpwrite.o meltf.o moninobuk.o netsolar.o newsnow.o orb_coszen.o qsadv.o rstFileMod.o snowage.o snowcompaction.o snowfraction.o snowlayerscombine.o snowlayersdivide.o snowwater.o soilwater.o stomata.o subsurfacerunoff.o surfacerunoff.o ticktime.o tridia.o twostream.o vec2xy.o -o clm.x

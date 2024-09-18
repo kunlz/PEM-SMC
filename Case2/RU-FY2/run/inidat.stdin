@@ -1,0 +1,18 @@
+&clminiexp
+site           = 'Valdai'
+greenwich      = .false.
+start_yr       =  2020
+start_jday     =  1
+start_sec      =  0
+fsurdat        = '/group_homes/lzu_public/home/u120220909911/Summer/Last/LE/RU-FY2/data/srfdata.valdai'
+flaidat        = ' '
+fmetdat        = '/group_homes/lzu_public/home/u120220909911/Summer/Last/LE/RU-FY2/data/VAL.DAT.CTRL'
+fhistTimeConst = '/group_homes/lzu_public/home/u120220909911/Summer/Last/LE/RU-FY2/output/rstTimeConst'
+fhistTimeVar   = '/group_homes/lzu_public/home/u120220909911/Summer/Last/LE/RU-FY2/output/rstTimeVar'
+foutdat        = '/group_homes/lzu_public/home/u120220909911/Summer/Last/LE/RU-FY2/output/VALDAI'
+finfolist      = '/group_homes/lzu_public/home/u120220909911/Summer/Last/LE/RU-FY2/run/clmini.infolist'
+lon_points     =  1
+lat_points     =  1
+deltim         =  1800
+mstep          =  4417
+/

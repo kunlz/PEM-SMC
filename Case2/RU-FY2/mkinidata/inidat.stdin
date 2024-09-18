@@ -1,0 +1,19 @@
+&clminiexp
+site           = 'GLOBAL'
+greenwich      = .true.
+start_yr       =  1966
+start_jday     =  1
+start_sec      =  0
+fsurdat        = '/mnt/disk2/clm/data/srfdata.1deg'
+flaidat        = ' '
+fsoildat       = '/mnt/disk2/clm/data/soilini'
+fmetdat        = '/mnt/disk2/clm/data/VAL.DAT.CTRL.INT'
+fhistTimeConst = '/mnt/disk2/clm/output/GLOBAL-rstTimeConst'
+fhistTimeVar   = '/mnt/disk2/clm/output/GLOBAL-rstTimeVar'
+foutdat        = '/mnt/disk2/clm/output/GLOBAL'
+finfolist      = '/mnt/disk2/clm/run/clmini.infolist'
+lon_points     =  360
+lat_points     =  180
+deltim         =  1800
+mstep          =  315552
+/
