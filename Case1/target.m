@@ -1,4 +1,4 @@
-function L=targetFcase1(x)
+function L = target(x)
 % % x is the sample
 % % L is the log transfer of the target distribution
 % global obs
@@ -63,3 +63,5 @@ f=1/Nm*(mvnpdf(x,mu1,sigma1)+mvnpdf(x,mu2,sigma2)+mvnpdf(x,mu3,sigma3)+mvnpdf(x,
     +mvnpdf(x,mu13,sigma13)+mvnpdf(x,mu14,sigma14)+mvnpdf(x,mu15,sigma15));
 
 L=log(f);
+
+end
