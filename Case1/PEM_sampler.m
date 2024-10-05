@@ -5,7 +5,7 @@
 %                 Dr. Kun Zhang,   University of Hong Kong       %
 % Date:           Nov. 30, 2021                                  %
 % -------------------------------------------------------------- %
-function [para_iter] = PEM_sampler(Np, S, bound, obs)
+function [para_iter] = PEM_sampler(Np, S, bound)
 % --------------
 % function input
 % Np    -- number of particles
@@ -23,7 +23,7 @@ dim = size(bound, 2);
 para_iter = nan(Np, dim, S);
 
 % Generate initial population from the sampling space
-w = 1/Np .* ones(Np,1);
+w = 1/Np .* ones(Np,1); 
 para_old = bound(1, :) + (bound(2, :) - bound(1, :)) .* rand(Np, dim);
 
 % Prior distribution
@@ -51,20 +51,20 @@ cal_weight = zeros(Np,1);
 reverseStr = ' --> ';
 fprintf('PEM-SMC :: completed');
 for stage = 2 : S
-    
+
     % Iteration for Np particle
     betas_new = betas(stage);
     betas_old = betas(stage - 1);
 
-    for k = 1 : Np  % Parfor 
+    for k = 1 : Np  % Parfor
 
         % log of target distribution
-        alp = betas_new * target(para_old(k, :), obs);
+        alp = betas_new * target(para_old(k, :));
 
         % log of prior distribution
         prix = (1 - betas_new) * L_P0;
 
-        alp_old = betas_old * target(para_old(k, :), obs);
+        alp_old = betas_old * target(para_old(k, :));
         prix_old = (1 - betas_old) * L_P0;
         cal_weight(k, 1) = (alp + prix) - (alp_old + prix_old);
     end
@@ -85,33 +85,33 @@ for stage = 2 : S
     for i = 1 : Np
         e = -b + 2.*b.*rand(1, dim);
         para_median = para_old(i, :) + e;
-        alp_old = betas_new .* target(para_new(i, :), obs);
-        alp_media = betas_new .* target(para_median, obs);      
- 
+        alp_old = betas_new .* target(para_new(i, :));
+        alp_media = betas_new .* target(para_median);
+
         % M-H accept
         ratio = min([1, exp(alp_media - alp_old)]);
         u = rand;
         if u < ratio
-            para_new(i, :) = para_median;  
+            para_new(i, :) = para_median;
             accept(stage) = accept(stage) + 1;
         else
-            para_new(i, :) = para_new(i, :); 
-        end        
-    end    
+            para_new(i, :) = para_new(i, :);
+        end
+    end
 
     % Crossover Operater
     [para_median, index] = crossover(para_new, pc);
 
     % Iteration for Np particle
     for k = 1 : Np/2
-        
-        % Crossover step
-        old_ind = index(2*k-1 : 2*k); 
-        alp_old = betas_new * (target(para_new(old_ind(1), :), obs)...
-            + target(para_new(old_ind(2), :), obs));
 
-        alp_media = betas_new * (target(para_median(2*k-1, :), obs)...
-            + target(para_median(2*k, :), obs));
+        % Crossover step
+        old_ind = index(2*k-1 : 2*k);
+        alp_old = betas_new * (target(para_new(old_ind(1), :))...
+            + target(para_new(old_ind(2), :)));
+
+        alp_media = betas_new * (target(para_median(2*k-1, :))...
+            + target(para_median(2*k, :)));
 
         % M-H accept
         ratio = min([1, exp(alp_media - alp_old)]);
@@ -133,8 +133,8 @@ for stage = 2 : S
     for k = 1 : Np
 
         para_median2 = Generatep(para_new, k, bound(1, :), bound(2, :));
-        alp_old = betas_new * target(para_new(k, :), obs);
-        alp_media = betas_new * target(para_median2, obs);
+        alp_old = betas_new * target(para_new(k, :));
+        alp_media = betas_new * target(para_median2);
 
         % M-H accept
         ratio = min([1, exp(alp_media - alp_old)]);
@@ -152,11 +152,11 @@ for stage = 2 : S
     % Replace & Save Parameters
     para_old = para_new;
     para_iter(:, :, stage) = para_old;
-    
+
     % ProgressBar
     percentDone = 100 * stage / S;
     msg = sprintf('%3.2f', percentDone); %Don't forget this semicolon
-    fprintf([reverseStr, msg]); 
+    fprintf([reverseStr, msg]);
     reverseStr = repmat(sprintf('\b'), 1, length(msg));
 end
 disp(' --> Finish ')

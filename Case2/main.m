@@ -1,5 +1,5 @@
 clc
-clear all
+clear
 % PEM-SMC
 
 Np = 50;                      % number of particles
@@ -11,5 +11,6 @@ bound=[10,  0.06,  4,   50,    0.01,   0.35;
 
 obs = importdata('LE_verify.txt'); % the observed datasets simulated by default parameters
 
-[paramter_iteration]=PEM_sampler(Np,S,bound,obs); 
+tic
+[paramter_iteration]=PEM_sampler(Np,S,bound,obs); toc
 save parameter paramter_iteration

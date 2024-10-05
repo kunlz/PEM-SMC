@@ -10,7 +10,7 @@ end
 fclose(fid);
 
 %% 2. run model
-system('/group_homes/lzu_public/home/u120220909911/Summer/Last/LE/run.exe');
+system('run.exe');
 
 
 %% 3. caculate L
